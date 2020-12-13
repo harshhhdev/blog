@@ -1,0 +1,61 @@
+{{
+  const { globalMeta, contentArray, $root } = Abell;
+
+  const Nav = require('./components/Nav.abell')
+  const InlinedCSS = require('./static-assets/styles/inlined.css.abell');
+}}
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@{{ globalMeta.twitter }}" />
+  <meta property="og:title" content="{{ globalMeta.siteName }}" />
+  <meta property="og:description" content="{{ globalMeta.siteName }}" />
+  <meta property="og:image" content="https://res.cloudinary.com/saurabhdaware/image/upload/g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:{{ globalMeta.siteName }}/v1604047618/saurabh2021/cover.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Welcome to the {{ globalMeta.siteName }}, A blog by {{ globalMeta.name }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/index.css">
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/scrollbar.css">
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/main.css">
+  <title>{{ globalMeta.siteName }}</title>
+  <InlinedCSS/>
+</head>
+<body class="dark">
+  <Nav />
+  <header>
+    <h1>{{ globalMeta.siteName }}</h1>
+    <div class="header-bio">
+      Welcome to my personal blog. Here, I talk about life, and coding!
+    </div>
+  </header>
+  <main>
+    <div class="article-container">
+      {{
+        contentArray
+          .map(meta => /* html */ `
+            <article class="shadow">
+              <a href="${meta.$path}/">
+                <img src=${meta.cover} class="cover" />
+                <div class="blog-content">
+                  <p class="white">${meta.label}</p>
+                  <h2>${meta.title}</h2>
+                  <div class="article-date">${meta.createdAt}</div>
+                  <p class="article-description">${meta.description}</p>
+                  <div class="post-footer">
+                      <img src="https://cdn.discordapp.com/attachments/769765299599048744/783799407597322260/logo.png" class="icon" />
+                      <p class="white">${meta.time}</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+          `)
+      }}
+    </div>
+  </main>
+  <script defer src="{{ $root }}/static-assets/js/static-main.js"></script>
+</body>
+</html>

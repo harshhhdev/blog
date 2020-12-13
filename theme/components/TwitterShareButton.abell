@@ -1,0 +1,19 @@
+<AbellComponent>
+<template>
+  <a 
+    target="_blank" 
+    rel="noopener noreferer" 
+    class="twitter-share-button blog dynamic-url" 
+    href="https://twitter.com/intent/tweet?text=check%20out%20this%20interesting%20blog%20written%20by%20Harsh%20Singh!%20{{ props.link }}" 
+    data-size="large"
+  >
+    <img width="20" style="position: relative;top:4px;" alt="Twitter Logo" src="{{ props.$root }}/static-assets/icons/twitter.svg"> 
+    &nbsp;Share on Twitter
+  </a>
+</template>
+<style>
+  .twitter-share-button{
+    margin-left: 0 !important;
+  }
+</style>
+</AbellComponent>

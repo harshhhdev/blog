@@ -1,0 +1,14 @@
+<AbellComponent>
+<template>
+  <a 
+    target="_blank" 
+    rel="noopener noreferer" 
+    class="twitter-share-button blog dynamic-url" 
+    href="https://facebook.com/sharer/sharer.php?u={{ props.link }}" 
+    data-size="large"
+  >
+    <img width="20" style="position: relative;top:4px;" alt="Facebook Logo" src="{{ props.$root }}/static-assets/icons/facebook-brands.svg"> 
+    &nbsp;Share on Facebook
+  </a>
+</template>
+</AbellComponent>

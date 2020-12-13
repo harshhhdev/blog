@@ -1,0 +1,81 @@
+
+/* CSS Variables defined in ./inlined/InlinedCSS.abell */
+
+header {
+  width: 100%;
+  padding: 100px 200px;
+}
+header > h1 {
+  margin: 10px 0px;
+  font-size: 50pt;
+}
+
+.article-date {
+  font-size: 10pt;
+  color: var(--font-color-primary);
+  padding: 10px 0;
+}
+.article-container {
+  width: 60%;
+  padding-left: 200px;
+}
+.article-container > article {
+  background-color: var(--elevation-background);
+  margin-bottom: 30px;
+  width: 400px;
+  border-radius: 12px;
+  transition: 0.1s linear all;
+}
+
+article:hover {
+  transform: scale(1.01, 1.01);
+}
+
+.article-container > article > a {
+  display: block;
+}
+.article-container > article h2 {
+  margin: 9px 0px 0px 0px;
+}
+.article-container .article-description {
+  margin: 20px 0px;
+  color: var(--font-color-primary);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 30px 20px 100px 20px;
+  }
+  .article-container {
+    padding: 20px 20px 20px 20px;
+  }
+  .article-container > article > a {
+    padding: 15px 20px;
+    display: block;
+  }
+}
+
+.icon {
+  border-radius: 100px;
+  width: 50px;
+}
+
+.cover {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  width: 400px;
+}
+
+.blog-content {
+  padding: 0 10px 20px 20px;
+}
+
+.post-footer {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.white {
+  color: var(--font-color-primary);
+}

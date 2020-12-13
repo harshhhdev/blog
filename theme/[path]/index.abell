@@ -1,0 +1,85 @@
+{{
+  const { globalMeta, meta, importContent, $root } = Abell;
+
+  const TwitterShareButton = require('../components/TwitterShareButton.abell');
+  const FacebookShareButton = require('../components/FacebookShareButton.abell');
+  const RedditShareButton = require('../components/RedditShareButton.abell');
+  const Nav = require('../components/Nav.abell');
+
+  const InlinedCSS = require('../static-assets/styles/inlined.css.abell');
+}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ 
+    const ogImageOptions = `g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:${ meta.title }`;
+  }}
+
+  <meta charset="UTF-8"/>
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@{{ globalMeta.twitter }}" />
+  <meta property="og:title" content="{{ meta.title }}" />
+  <meta property="og:description" content="{{ meta.description }}" />
+  <meta property="og:image" content="https://res.cloudinary.com/saurabhdaware/image/upload/{{ ogImageOptions }}/v1604047618/saurabh2021/cover.png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Cover Image of blog with title written in it" />
+
+  <meta name="description" content="{{ meta.description }}"/>
+  <link rel="shortcut icon" href="{{ $root }}/favicon.ico" type="image/x-icon" />
+  <meta name="og:title" content="{{ meta.title }}"/>
+  <meta name="og:description" content="{{ meta.description }}"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/blog.css"/>
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/scrollbar.css"/>
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles/main.css"/>
+
+  <title>{{ meta.title }} - {{ globalMeta.siteName }}</title>
+  <script src="https://kit.fontawesome.com/2ca6785a00.js" crossorigin="anonymous"></script>
+
+  <InlinedCSS/>
+</head>
+<body class="dark">
+<div id="top-scrollbar">
+<div id="top-scrollbar-bg">
+</div>
+</div>
+<Nav />
+  <main class="container">
+    <div style="display: flex; justify-content: space-between;">
+      <a href="/" class="back-btn"><i class="fas fa-arrow-left" style="padding-right: 10px;"></i>All Articles</a>
+      <a href="/" class="edit-btn">Edit Post <i class="fas fa-edit" style="padding-right: 10px;"></i></a>
+    </div>
+    <div class="blog-container">
+      <div class="content">
+        <h1>{{ meta.title }}</h1>
+        <div class="blog-date">
+          Published on {{ meta.$createdAt.toDateString() }}
+        </div>
+
+        {{ importContent(`${meta.$path}/index.md`) }}
+      </div>
+    </div>
+    <hr/><br/><br/>
+    <div class="buttons" style="display: flex;">
+      <TwitterShareButton 
+        props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
+      />
+      <FacebookShareButton  
+        props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
+      />
+      <RedditShareButton  
+        props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
+      />
+    </div>
+  </main>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script defer src="{{ $root }}/static-assets/js/static-main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="./../static-assets/js/scroll-pos.js"></script>
+</body>
+</html>
