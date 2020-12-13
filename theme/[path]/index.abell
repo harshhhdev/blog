@@ -49,8 +49,8 @@
 <Nav />
   <main class="container">
     <div style="display: flex; justify-content: space-between;">
-      <a href="/" class="back-btn"><i class="fas fa-arrow-left" style="padding-right: 10px;"></i>All Articles</a>
-      <a href="/" class="edit-btn">Edit Post <i class="fas fa-edit" style="padding-right: 10px;"></i></a>
+      <a href="https://harshhhdev.github.io/blog" class="back-btn"><i class="fas fa-arrow-left" style="padding-right: 10px;"></i>All Articles</a>
+      <a href={{ meta.github }} class="edit-btn">Edit Post <i class="fas fa-edit" style="padding-right: 10px;"></i></a>
     </div>
     <div class="blog-container">
       <div class="content">
