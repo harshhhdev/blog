@@ -1,4 +1,4 @@
-# Hello 👋
+# Hi There 👋
 
 My name is Harsh Singh. I'm currently in 9th grade, and am balancing school with coding. I love making web applications. All of my work is open source, and I also enjoy designing websites.
 

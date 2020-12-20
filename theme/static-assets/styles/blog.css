@@ -122,12 +122,15 @@ hr {
 
 .twitter-share-button {
   display: flex;
-  padding: 10px 20px;
-  border-radius: 7px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
   color: #F8F8F8;
-  width: fit-content;
+  width: 34px;
+  height: 34px;
   background-color: #4C6CD3;
-  margin: 0 20px;
+  margin: 0 10px;
   transition: 0.1s linear all;
 }
 
@@ -136,5 +139,5 @@ hr {
 }
 
 .twitter-share-button:hover {
-  transform: scale(1.05, 1.05);
+  transform: scale(1.1, 1.1);
 }

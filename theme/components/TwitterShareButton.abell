@@ -7,8 +7,8 @@
     href="https://twitter.com/intent/tweet?text=check%20out%20this%20interesting%20blog%20written%20by%20Harsh%20Singh!%20{{ props.link }}" 
     data-size="large"
   >
-    <img width="20" style="position: relative;top:4px;" alt="Twitter Logo" src="{{ props.$root }}/static-assets/icons/twitter.svg"> 
-    &nbsp;Share on Twitter
+    <img width="24" style="position: relative;top:4px;left:2px;" alt="Facebook Logo" src="{{ props.$root }}/static-assets/icons/twitter.svg"> 
+    &nbsp;
   </a>
 </template>
 <style>

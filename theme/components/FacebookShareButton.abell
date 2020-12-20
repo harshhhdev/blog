@@ -7,8 +7,8 @@
     href="https://facebook.com/sharer/sharer.php?u={{ props.link }}" 
     data-size="large"
   >
-    <img width="20" style="position: relative;top:4px;" alt="Facebook Logo" src="{{ props.$root }}/static-assets/icons/facebook-brands.svg"> 
-    &nbsp;Share on Facebook
+    <img width="24" style="position: relative;top:4px;left:2px;" alt="Facebook Logo" src="{{ props.$root }}/static-assets/icons/facebook-brands.svg"> 
+    &nbsp;
   </a>
 </template>
 </AbellComponent>

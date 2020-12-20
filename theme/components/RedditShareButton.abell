@@ -7,8 +7,8 @@
     href="https://www.reddit.com/submit?url={{ props.link }}&title=Check%20out%20this%20new%20blog%20by%20Harsh%20Singh" 
     data-size="large"
   >
-    <img width="20" style="position: relative;top:4px;" alt="Reddit Logo" src="{{ props.$root }}/static-assets/icons/reddit-brands.svg"> 
-    &nbsp;Share on Reddit
+    <img width="24" style="position: relative;top:4px;left:2px;" alt="Facebook Logo" src="{{ props.$root }}/static-assets/icons/reddit-brands.svg"> 
+    &nbsp;
   </a>
 </template>
 </AbellComponent>
