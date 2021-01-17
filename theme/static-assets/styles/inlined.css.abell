@@ -14,7 +14,7 @@
     --font-color-primary: #F8F8F8; 
     --elevation-background: #3B3B3B;
     --code-background: #222;
-    --link-color: #09f;
+    --link-color: #55BDE2;
   }
 
   html, body {

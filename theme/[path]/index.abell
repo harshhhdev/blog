@@ -54,10 +54,19 @@
     </div>
     <div class="blog-container">
       <div class="content">
-        <h1>{{ meta.title }}</h1>
-        <div class="blog-date">
-          Published on {{ meta.$createdAt.toDateString() }}
-        </div>
+        <h1 class="title">{{ meta.title }}</h1>
+          <div class="post-footer">
+              <a href="/" draggable="false" class="author">
+                <img src="https://cdn.discordapp.com/attachments/769765299599048744/783799407597322260/logo.png" class="icon" draggable="false" />
+                  Harsh
+                </a>
+            <div class="included">included in <i class="far fa-folder"></i>{{meta.label}}</div>
+          </div>
+          <div class="stats">
+            <div class="word-count"><i class="fas fa-pencil-alt"></i>{{ meta.words }} words</div>
+            <div class="date"><i class="far fa-calendar"></i>{{ meta.createdAt }}</div>
+            <div class="time"><i class="far fa-clock"></i>{{ meta.time }} minutes</div>
+          </div>
         <div class="buttons" style="display: flex;">
           <TwitterShareButton 
             props={link: `${globalMeta.domain}/${meta.$path}/`, $root}

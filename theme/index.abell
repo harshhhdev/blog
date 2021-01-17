@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{ $root }}./static-assets/styles/main.css">
   <title>{{ globalMeta.siteName }}</title>
   <InlinedCSS/>
+  <script src="https://kit.fontawesome.com/2ca6785a00.js" crossorigin="anonymous"></script>
 </head>
 <body class="dark">
   <Nav />
@@ -31,31 +32,44 @@
     <div class="header-bio">
       Welcome to my personal blog. Here, I talk about life, and coding!
     </div>
+    <div class="random-article">
+      <p>Confused on what to read? Here's a random post:</p>
+    </div>
   </header>
-  <main>
+  <main>    
     <div class="article-container">
       {{
         contentArray
           .map(meta => /* html */ `
-            <article class="shadow">
-              <a href="${meta.$path}/">
-                <img src=${meta.cover} class="cover" />
+            <article>
                 <div class="blog-content">
-                  <p class="white">${meta.label}</p>
-                  <h2>${meta.title}</h2>
-                  <div class="article-date">${meta.createdAt}</div>
-                  <p class="article-description">${meta.description}</p>
+                  <a href="${meta.$path}">
+                    <h2 class="title">${meta.title}</h2>
+                  </a>
                   <div class="post-footer">
-                      <img src="https://cdn.discordapp.com/attachments/769765299599048744/783799407597322260/logo.png" class="icon" />
-                      <p class="white">${meta.time}</p>
+                      <a href="/" draggable="false" class="author">
+                        <img src="https://cdn.discordapp.com/attachments/769765299599048744/783799407597322260/logo.png" class="icon" draggable="false" />
+                        Harsh
+                      </a>
+                      <div class="article-date">published on ${meta.createdAt}</div>
+                      <div class="included">included in <i class="far fa-folder"></i>${meta.label}</div>
+                  </div>
+                  <p class="article-description">${meta.description}</p>
+                  <div class="footer">
+                    <a href="${meta.$path}" class="read">Read More</a>
+                    <div class="tags">                    
+                      <i class="fas fa-tags"></i>
+                      <p>${meta.tags}</p>
+                    </div>
                   </div>
                 </div>
-              </a>
+                <div class="dot-line"></div>
             </article>
           `)
       }}
     </div>
   </main>
   <script defer src="{{ $root }}./static-assets/js/static-main.js"></script>
+  <script src="{{ $root }}./static-assets/js/rand-post.js"></script>
 </body>
 </html>
