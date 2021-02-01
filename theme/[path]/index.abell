@@ -12,12 +12,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {{ 
+  {{
     const ogImageOptions = `g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:${ meta.title }`;
   }}
 
   <meta charset="UTF-8"/>
-  
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:creator" content="@{{ globalMeta.twitter }}" />
   <meta property="og:title" content="{{ meta.title }}" />
@@ -68,13 +68,13 @@
             <div class="time"><i class="far fa-clock"></i>{{ meta.time }} minutes</div>
           </div>
         <div class="buttons" style="display: flex;">
-          <TwitterShareButton 
+          <TwitterShareButton
             props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
           />
-          <FacebookShareButton  
+          <FacebookShareButton
             props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
           />
-          <RedditShareButton  
+          <RedditShareButton
             props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
           />
         </div>
@@ -91,4 +91,28 @@
   <script src="./../static-assets/js/scroll-pos.js"></script>
     <script src="./../static-assets/js/nav.js"></script>
 </body>
+<style>
+a {
+	position: relative;
+  transition: all 0.6s;
+  text-decoration: none;
+}
+
+a:before {
+  content: '';
+  width: 0;
+	height: 0.1em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #4DA5C4;
+  transition: all 0.3s;
+}
+
+a:hover:before {
+	width: 100%;
+	left: 0;
+  background: #4DA5C4;
+}
+</style>
 </html>
