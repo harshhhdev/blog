@@ -36,7 +36,7 @@
       <p>Confused on what to read? Here's a random post:</p>
     </div>
   </header>
-  <main>    
+  <main>
     <div class="article-container">
       {{
         contentArray

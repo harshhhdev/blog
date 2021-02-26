@@ -12,20 +12,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {{
-    const ogImageOptions = `g_center,w_1100,c_fit,co_rgb:222222,l_text:Work Sans_80_600:${ meta.title }`;
-  }}
-
   <meta charset="UTF-8"/>
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:creator" content="@{{ globalMeta.twitter }}" />
   <meta property="og:title" content="{{ meta.title }}" />
   <meta property="og:description" content="{{ meta.description }}" />
-  <meta property="og:image" content="https://res.cloudinary.com/saurabhdaware/image/upload/{{ ogImageOptions }}/v1604047618/saurabh2021/cover.png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Cover Image of blog with title written in it" />
 
   <meta name="description" content="{{ meta.description }}"/>
   <link rel="shortcut icon" href="{{ $root }}/favicon.ico" type="image/x-icon" />
@@ -63,7 +57,7 @@
             <div class="included">included in <i class="far fa-folder"></i>{{meta.label}}</div>
           </div>
           <div class="stats">
-            <div class="word-count"><i class="fas fa-pencil-alt"></i>{{ meta.words }} words</div>
+            <div class="word-count"><i class="fas fa-pencil-alt"></i></div>
             <div class="date"><i class="far fa-calendar"></i>{{ meta.createdAt }}</div>
             <div class="time"><i class="far fa-clock"></i>{{ meta.time }} minutes</div>
           </div>
@@ -78,7 +72,9 @@
             props={link: `${globalMeta.domain}/${meta.$path}/`, $root}
           />
         </div>
-        {{ importContent(`${meta.$path}/index.md`) }}
+        <div class="blog">
+          {{ importContent(`${meta.$path}/index.md`) }}
+        </div>
       </div>
     </div>
     <hr/><br/><br/>
@@ -87,18 +83,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="{{ $root }}/static-assets/js/static-main.js"></script>
+  <script defer src="{{ $root }}/static-assets/js/post-info.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script src="./../static-assets/js/scroll-pos.js"></script>
-    <script src="./../static-assets/js/nav.js"></script>
+  <script src="./../static-assets/js/nav.js"></script>
 </body>
 <style>
-a {
+.blog a {
 	position: relative;
   transition: all 0.6s;
   text-decoration: none;
 }
 
-a:before {
+.blog a:before {
   content: '';
   width: 0;
 	height: 0.1em;
@@ -109,7 +106,7 @@ a:before {
   transition: all 0.3s;
 }
 
-a:hover:before {
+.blog a:hover:before {
 	width: 100%;
 	left: 0;
   background: #4DA5C4;

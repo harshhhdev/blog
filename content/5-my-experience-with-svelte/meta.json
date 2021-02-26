@@ -1,0 +1,10 @@
+{
+  "postNum": "6",
+  "title": "My Experience with Svelte",
+  "label": "web",
+  "description": "So... this week, I decided to redo one of my older websites, an app idea generator in Svelte, a frontend JavaScript framework. Here is just a brief overview of what I think of it.",
+  "createdAt": "26 February 2020",
+  "time": "2",
+  "tags": "web, javascript, svelte",
+  "words": "520"
+}

@@ -3,12 +3,11 @@
   <a 
     target="_blank" 
     rel="noopener noreferer" 
-    class="twitter-share-button blog dynamic-url" 
+    class="share-button dynamic-url" 
     href="https://www.reddit.com/submit?url={{ props.link }}&title=Check%20out%20this%20new%20blog%20by%20Harsh%20Singh" 
     data-size="large"
   >
-    <img width="24" style="position: relative;top:4px;left:2px;" alt="Facebook Logo" src="{{ props.$root }}/static-assets/icons/reddit-brands.svg"> 
-    &nbsp;
+    <i class="fab fa-reddit"></i>
   </a>
 </template>
 </AbellComponent>

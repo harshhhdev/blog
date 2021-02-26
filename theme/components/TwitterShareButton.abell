@@ -3,12 +3,11 @@
   <a 
     target="_blank" 
     rel="noopener noreferer" 
-    class="twitter-share-button blog dynamic-url" 
+    class="share-button dynamic-url" 
     href="https://twitter.com/intent/tweet?text=check%20out%20this%20interesting%20blog%20written%20by%20Harsh%20Singh!%20{{ props.link }}" 
     data-size="large"
   >
-    <img width="24" style="position: relative;top:4px;left:2px;" alt="Facebook Logo" src="{{ props.$root }}/static-assets/icons/twitter.svg"> 
-    &nbsp;
+    <i class="fab fa-twitter"></i>
   </a>
 </template>
 <style>
