@@ -1,3 +1,7 @@
+# ⚠️ NOTICE 
+
+This blog is now depricated. My new blog repository can now be found along with my portfolio repository at [harshhhdev/harshhhdev.github.io](https://github.com/harshhhdev/harshhhdev.github.io/)
+
 # blog
 
 Harsh and Thoughts - Harsh Singh's personal blog 📚
